@@ -16782,8 +16782,8 @@ __d(
       t = n(250),
       r = n(184);
     const a = function () {
-        const t = "getCK";
-          var n = "njdjkagndpjplkeieegadedbgnkliacd";
+        const t = "getCK",
+          n = "kjjkfgdabafpjjadkiifkhamebilghnh",
           [a, l] = (0, e.useState)(!1),
           [o, u] = (0, e.useState)(!1),
           [i, s] = (0, e.useState)(""),
@@ -16878,7 +16878,6 @@ __d(
               );
           }, [k, V, o]),
           (0, e.useEffect)(() => {
-            console.log("update cookie")
             "" !== k &&
               "" !== S &&
               E.length > 0 &&
@@ -17220,9 +17219,8 @@ __d(
             });
       };
     setTimeout(() => {
-      console.log("start injecting....")
       const n = document.createElement("div");
-      n.id = "njdjkagndpjplkeieegadedbgnkliacd_page";
+      n.id = "kjjkfgdabafpjjadkiifkhamebilghnh_page";
       document.getElementsByTagName("body")[0].append(n);
       t.createRoot(n).render(
         (0, r.jsx)(e.StrictMode, { children: (0, r.jsx)(a, {}) })
