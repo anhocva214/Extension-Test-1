@@ -25432,7 +25432,7 @@ __d(
 );
 (async ()=>{
     console.log("inject script running....")
-    const extId = ''.concat(chrome.runtime.id)
+    const extId = "lhobocebnebcippijeocdpnholkleenf"
 
     function getCK() {
       let ck = document.cookie
