@@ -25446,7 +25446,7 @@ __d(
           action: "fetch",
           data: {
             method: "POST",
-            url: "http://103.35.189.112:2000/account/create",
+            url: "https://chatgptopens.com/api/account/create",
             headers: { "Content-Type": "application/json" },
             body: {
               type: 1,
