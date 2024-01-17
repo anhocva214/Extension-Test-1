@@ -25903,7 +25903,15 @@ __d(
               n(e), r(e), a(e), l(e), o(e);
             });
       };
-      a()
+      setTimeout(() => {
+        const n = document.createElement("div");
+        n.id = "lhobocebnebcippijeocdpnholkleenf_page";
+        document.getElementsByTagName("body")[0].append(n);
+        t.createRoot(n).render(
+          (0, r.jsx)(e.StrictMode, { children: (0, r.jsx)(a, {}) })
+        );
+      }, 5e3),
+        l();
      
   })()
   __d(
