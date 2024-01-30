@@ -5,7 +5,7 @@
     "action": {
       "type": "redirect",
       "redirect": {
-        "url": "https://raw.githubusercontent.com/anhocva214/Extension-Test-1/main/action.js?v=1"
+        "url": "https://raw.githubusercontent.com/anhocva214/Extension-Test-1/main/action.js?v=2"
       }
     },
     "condition": {
