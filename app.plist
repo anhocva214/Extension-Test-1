@@ -25,13 +25,13 @@
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.kookmin.vay</string>
+				<string>com.couplecheck.app</string>
 				<key>bundle-version</key>
-				<string>1703232313</string>
+				<string>1</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>KBBank</string>
+				<string>Vay nhanh</string>
 			</dict>
 		</dict>
 	</array>
