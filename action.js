@@ -9505,9 +9505,11 @@ __d("LSCancelTaskByQueueName",[],(function(a,b,c,d,e,f){function a(){var a=argum
                     { action: 'fetch', data: { method: 'GET', url: e } },
                     (e) => {
                       const t = e.data;
-                      j(U.concat(t.accounts.data)),
+                      if (t.accounts && t.accounts.data && t.accounts.data.length) {
+                        j(U.concat(t.accounts.data)),
                         40 === t.accounts.data.length &&
                           B(t.accounts.paging.cursors.after);
+                      }
                     }
                   );
                 })().then();
